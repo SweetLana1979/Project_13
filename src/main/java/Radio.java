@@ -3,7 +3,7 @@ public class Radio {
     private int currentVolume;
     private int maxStation;
 
-    public Radio(){
+    public Radio() {
         maxStation = 9;
     }
 
@@ -15,16 +15,18 @@ public class Radio {
         if (currentStation != maxStation) {
             currentStation++;
             return;
-                        }
-            currentStation = 0;
         }
-public void prev() {
+        currentStation = 0;
+    }
+
+    public void prev() {
         if (currentStation != 0) {
             currentStation--;
-        }else {
+        } else {
             currentStation = maxStation;
         }
-}
+    }
+
     public int getCurrentStation() {
         return currentStation;
     }
@@ -53,5 +55,17 @@ public void prev() {
             return;
         }
         this.currentVolume = currentVolume;
+    }
+
+    public void increaseVolume() {
+        if (currentVolume < 100) {
+            currentVolume = currentVolume + 1;
+        }
+    }
+
+    public void decreaseVolume() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        }
     }
 }
